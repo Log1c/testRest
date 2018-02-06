@@ -1,11 +1,9 @@
 package ua.logic.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "skill")
 public class Skill {
 
     @Id
@@ -15,14 +13,10 @@ public class Skill {
     private String name;
 
     //TODO will be Enum
-    private String level;
+    private String grade;
 
     public long getId() {
         return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -33,11 +27,19 @@ public class Skill {
         this.name = name;
     }
 
-    public String getLevel() {
-        return level;
+    public String getGrade() {
+        return grade;
     }
 
-    public void setLevel(String level) {
-        this.level = level;
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
+
+    @Override
+    public String toString() {
+        return "Skill{" +
+                "name='" + name + '\'' +
+                ", grade='" + grade + '\'' +
+                '}';
     }
 }
